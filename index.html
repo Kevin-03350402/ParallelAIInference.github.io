@@ -1,10 +1,79 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>My GitHub Page</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Optimized MoE LLM Inference</title>
+    <style>
+        body { font-family: Arial, sans-serif; line-height: 1.6; margin: 20px; }
+        h1, h2 { color: navy; }
+        p { margin: 10px 0; }
+        ul { margin: 10px 20px; }
+        li { margin: 5px 0; }
+    </style>
 </head>
 <body>
-    <h1>Hello World!</h1>
-    <p>This is my first GitHub Pages site.</p>
+    <h1>Optimized Mixture of Experts LLM (MoE) Inference</h1>
+    
+    <section id="summary">
+        <h2>Summary</h2>
+        <p>We plan to implement an optimized attention layer to speed up mixture of experts LLM (MoE) inference on the NVIDIA GPUs in the lab. We'll explore architectural optimizations, such as leveraging shared memory for reduced access times and employing asynchronous operations to enhance GPU utilization. This design is expected to significantly improve inference efficiency, offering a pathway to more responsive LLM systems.</p>
+    </section>
+    
+    <section id="background">
+        <h2>Background</h2>
+        <p>The focus of our project is on accelerating the inference phase of Large Language Models (LLMs) employing a Mixture of Experts (MoE) framework, specifically by optimizing the attention layer on NVIDIA GPUs...</p>
+        <p>Parallelism can significantly benefit this aspect of MoE LLMs for several reasons:</p>
+        <ul>
+            <li>Matrix Multiplications: The attention mechanism's core operations involve matrix multiplications that are inherently parallelizable...</li>
+            <li>Data Routing: The process of routing input data to various experts can also be parallelized...</li>
+            <li>Expert Processing: Since each 'expert' can operate independently, their computations can be performed in parallel...</li>
+        </ul>
+    </section>
+    
+    <section id="challenge">
+        <h2>The Challenge</h2>
+        <p>Workload and Constraints include data dependencies and synchronization, memory access patterns, and the communication to computation ratio...</p>
+    </section>
+    
+    <section id="resources">
+        <h2>Resources</h2>
+        <p>We are planning to start from scratch. However, we will refer to external resources such as academic papers and MoE implementations...</p>
+        <p>References:</p>
+        <ul>
+            <li><a href="https://github.com/AdamG012/moe-paper-models">https://github.com/AdamG012/moe-paper-models</a></li>
+            <li><a href="https://github.com/XueFuzhao/OpenMoE">https://github.com/XueFuzhao/OpenMoE</a></li>
+            <!-- Add more references as needed -->
+        </ul>
+    </section>
+    
+    <section id="goals">
+        <h2>Goals and Deliverables</h2>
+        <p>Our project is centered around the optimization of the attention layer in MoE LLMs for accelerated inference on NVIDIA GPUs...</p>
+        <p>a. Plan to Achieve:</p>
+        <ul>
+            <li>Optimized Attention Layer Implementation: Develop and implement an optimized version of the attention mechanism...</li>
+            <!-- Add more plans as needed -->
+        </ul>
+        <p>b. Hope to Achieve:</p>
+        <ul>
+            <li>More Ambitious Speedups: If progress exceeds expectations, we aim to explore additional optimization...</li>
+            <!-- Add more hopes as needed -->
+        </ul>
+    </section>
+    
+    <section id="platform">
+        <h2>Platform Choice</h2>
+        <p>We have chosen to use C/C++ and Python for development, with a focus on utilizing Open MPI for its detailed control over computations and memory management...</p>
+    </section>
+    
+    <section id="schedule">
+        <h2>Schedule</h2>
+        <ul>
+            <li>Week 1: Setup and initial performance benchmarking of MoE LLM on NVIDIA GPUs.</li>
+            <li>Week 2: Begin attention layer optimizations; focus on memory access patterns.</li>
+            <!-- Add more schedule items as needed -->
+        </ul>
+    </section>
 </body>
 </html>
